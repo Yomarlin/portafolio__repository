@@ -1,0 +1,941 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+}
+:root{
+    /* Scroll */
+    scroll-behavior: smooth;
+
+    /* Colores */
+
+    --color-green:                   #019A6C;                       /* Main - Botones*/
+    --color-green-extra-light:       #E6F5F0;                       /* Cards*/
+    --color-green-light:             #55BB9D;                       /* Herrmaientas*/
+    --color-green-medium:            #0C413F;                       /* Logos - Contacto*/
+    --color-green-dark:              #093231;
+    --color-green-extra-dark:        #072625;                       /* Footer*/
+
+    /* ## Colores Neutral */
+
+    --color-black:                   #000000;                       /* Texto*/
+    --color-white:                   #FFFFFF;                       /* Relleno / Texto / Marca*/
+    --color-gray-light:              #F8F8F8;                       /* Relleno*/
+    --color-gray-medium:             #C5C5C5;                       /* Borde*/
+    --color-gray:                    #D9D9D9;                       /* Slider */
+    --color-gray-reg:                #EDECEC;                       /* Figura */
+
+    /* Sombra */
+    --box-shadow-slider: 0px 0px 51.1px -15px #0f53518f;
+    --box-shadow: 0px 0px 10px 0px #00000040;
+
+    /* Espacios y dimensiones*/
+        /* Global */
+        --space-none:                      0px;
+        --space-5xs:                       2px;
+        --space-4xs:                       4px;
+        --space-3xs:                       8px;
+        --space-2xs:                       10px;
+        --space-xs:                        12px;
+        --space-sm:                        14px;
+        --space-md:                        22px;
+        --space-lg:                        24px;
+        --space-xl:                        28px;
+        --space-2xl:                       32px;
+        --space-3xl:                       34px;
+        --space-4xl:                       40px;
+        --space-5xl:                       44px;
+        --space-6xl:                       48px;
+        --space-7xl:                       60px;
+        --space-8xl:                       86px;
+        --space-pill:                      9999px;
+
+        /* Especificos */
+        --space-slider-one:                128px;
+        --space-slider-two:                133px;
+        --space-photo:                     105px;
+        --space-header:                    250px;
+
+    /* Bordes */
+    --corner-radius-xs:                    6px;                     /*Botones*/
+    --corner-radius-sm:                    8px;
+    --corner-radius-md:                    12px;                    /*Proyectos*/
+    --corner-radius-lg:                    14px;                    /*Boton / Email / Cards*/
+    --corner-radius-xlg:                   999px;                   /*Fotos perfil*/
+
+    /* Fuentes */
+    --font-primary:                     "Poppins", sans-serif;
+    --font-size-global:                 21px;
+}
+/* Plantilla Desktop 1920px */
+body{
+    font-family: var(--font-primary);
+    font-size: var(--font-size-global);
+}
+/* Header */
+.header {
+    display: flex;
+    padding: var(--space-7xl, 60px) var(--space-header, 250px)  var(--space-none, 0px);
+    align-items: center;
+
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+}
+.container{
+    display: flex;
+    width: 100%;
+    max-height: 67px;
+    justify-content: space-between;
+}
+.brand__svg {
+    color: var(--color-white);
+}
+.brand__svg--green{
+    color: var(--color-green);
+}
+/* Nav Bar */
+.nav {
+    display: flex;
+    gap: var(--space-2xs, 10px);
+    align-items: center;
+}
+.nav__link {
+    padding: var(--space-2xs, 10px) var(--space-sm, 14px);
+    border-radius: var(--corner-radius-sm, 6px);
+    text-decoration: none;
+    text-transform: capitalize;
+    max-height: 52px;
+
+    color: var(--color-black);
+    font-weight: 400;
+}
+.nav__link:hover {
+    background-color: var(--color-gray);
+}
+.nav__link--primary{
+    padding: var(--space-xs, 12px) var(--space-lg, 24px);
+    background-color: var(--color-green);
+    margin-left: var(--space-lg, 24px);
+    color: var(--color-white);
+}
+.nav__link--primary:hover{
+    background-color: var(--color-green-medium);
+}
+.nav__link--icon-only{
+    padding: var(--space-3xs, 8px);
+    display: none;
+}
+.nav__icon{
+    display: block;
+}
+/* Sections */
+.main {
+    display: flex;
+    flex-direction: column;
+}
+.section {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+/* Sección - Home */
+.section--home {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.home {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    width: 100%;
+    max-width: 1416px; 
+    padding-top: 80px;
+    margin: 0px auto;
+}
+/* Textos y Titulos - Home*/
+.home__text {
+    width: 622px;
+}
+.text__short{
+    width: 622px;
+    height: 295px;
+}
+.text__subtitle {
+    font-size: 24px;
+    font-weight: 600;
+}
+.text__name {
+    font-size: 32px;
+    color: var(--color-green);
+    font-weight: 600;
+}
+.text__title {
+    line-height: 100%;
+    font-size: 100px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+.text__title--highlighted {
+    margin-left: 225px;
+}
+.text__paragraph {
+    font-size: 23px;
+    font-weight: 400;
+    text-align: justify;
+}
+/* Logos e imagenes - Home */
+.home__graphics {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 46px;
+}
+.graphics__photo1 {
+    width: 520px;
+    height: 520px;
+
+    border-radius: var(--corner-radius-xlg);
+    border: 6px solid var(--color-green);
+}
+.graphics__logos {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-lg, 24px);
+}
+.logos__instagram{
+    color: var(--color-green-medium);
+    width: var(--space-2xl, 32px);
+    height: var(--space-2xl, 32px);
+}
+.logos__behance{
+    color: var(--color-green-medium);
+    width: var(--space-2xl, 32px);
+    height: var(--space-2xl, 32px);
+}
+.logos--behance-white{
+    color: var(--color-white);
+}
+.logos__github{
+    color: var(--color-green-medium);
+    width: var(--space-2xl, 32px);
+    height: var(--space-2xl, 32px);
+}
+
+/*  Sección Sobre Mi */
+.section--about {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: 100%;
+    height: 1400px;
+}
+.aboutme{
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    width: 100%;
+    max-width: 1416px; 
+    margin: 0px auto;
+    padding-bottom: 113px;
+    margin-top: 300px;
+}
+/* Foto */
+.me__about{
+    width: 555px;
+    height: 555px;
+
+    border-radius: var(--corner-radius-xlg);
+    border: var(--corner-radius-xs) solid var(--color-green);
+}
+/* Información */
+.text__about{
+    width: 756px;
+}
+.about__title{
+    font-size: 65px;
+    font-weight: 600;
+}
+.about__paragraph{
+    height: 240px;
+    font-weight: 400;
+    line-height: 30px;
+    margin-bottom: var(--space-xl, 28px);
+}
+/* Barra de Progreso */
+.about__skills{
+    height: 174px;
+}
+.skills__first{
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.progressbar{
+    width: 753px;
+    height: 12px;
+    background-color: var(--color-gray-reg);
+    border-radius: var(--corner-radius-xs, 6px);
+}
+.progressbar__container1{
+    width: 657px;
+    height: var(--space-xs, 12px);
+    background-color: var(--color-green);
+    border-radius: var(--corner-radius-xs, 6px);
+}
+.progressbar__circule{
+    width: 32px;
+    height: 32px;
+    background-color: var(--color-gray-reg);
+    border: 2px solid var(--color-green-dark);
+    border-radius: var(--space-pill);
+    margin-top: -23px;
+    margin-left: 650px;
+}
+.progressbar__circule2{
+    width: var(--space-2xl, 32px);
+    height: var(--space-2xl, 32px);
+    background-color: var(--color-gray-reg);
+    border: 2px solid var(--color-green-dark);
+    border-radius: var(--space-pill);
+    margin-top: -23px;
+    margin-left: 700px;
+}
+.skills__second{
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 26px;
+    margin-bottom: 18px;
+}
+.progressbar__container2{
+    width: 721px;
+    height: var(--space-xs);
+    background-color: var(--color-green);
+    border-radius: var(--corner-radius-xs, 6px);
+}
+/* Texto corto */
+.about__languages{
+    width: 923px;
+    text-align: center;
+    justify-content: center;
+}
+.about__zone{
+    color: var(--color-green);
+    width: 923px;
+    padding-bottom: 90px;
+    text-align: center;
+}
+/* Sliders */
+.slider__wrapper{
+    position: relative;
+    max-width: 1200px;
+    flex-direction: row;
+    margin-top: 20px;
+}
+.sliders{
+    display: flex;
+    gap: 70px;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+
+    -ms-overflow-style: none;   /* Hide scrollbar IE and Edge */
+	scrollbar-width: none;      /* Hide scrollbar Firefox  */
+}
+.slider::-webkit-scrollbar {
+	display: none;              /* Hide scrollbar for Chrome, Safari and Opera */
+}
+/* Cuadro de Herramientas */
+.tools {
+    min-width: 1087px;
+    height: 344px;
+    border-radius: var(--corner-radius-md);
+    background-color: var(--color-gray-light);
+    box-shadow: var(--box-shadow-slider);
+    padding-top: 5px;
+}
+.tools__title {
+    font-size: 28px;
+    font-weight: 500;
+    text-align: center;
+    padding-top: 34px;
+}
+.tools__group {
+    padding-top: var(--space-3xl, 34px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-8xl, 86px);
+    color: var(--color-green-extra-dark);
+}
+.logo--light {
+    color: var(--color-green-light);
+}
+.logo__name{
+    margin-top: var(--space-xs, 12px);
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+}
+/* Cuadro de Artistas */
+.artists {
+    min-width: 1087px;
+    height: 344px;
+    border-radius: var(--corner-radius-md);
+    background-color: var(--color-gray-light);
+    box-shadow: var(--box-shadow-slider);
+}
+.artists__title {
+    font-size: 28px;
+    font-weight: 500;
+    text-align: center;
+    padding-top: 34px;
+}
+.artist__group {
+    padding-top: var(--space-3xl, 34px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-7xl, 60px);
+}
+.name__artist{
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: -3px;
+}
+.profession__artist{
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    color: var(--color-green);
+}
+/* Cuadro de Pasatiempos */
+.hobbies {
+    min-width: 1087px;
+    height: 344px;
+    border-radius: var(--corner-radius-md);
+    background-color: var(--color-gray-light);
+    box-shadow: var(--box-shadow-slider);
+}
+.hobbies__title {
+    font-size: var(--space-xl, 28px);
+    font-weight: 500;
+    text-align: center;
+    padding-top: var(--space-3xl);
+}
+.hobbies__group {
+    padding-top: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-7xl, 60px);
+}
+.text__hobbie{
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+}
+/*                              Sección de servicios                                   */
+.section--service {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.services{
+    display: flex; 
+    align-items: center; 
+    flex-direction: column;
+    width: 100%;
+    max-width: 1416px; 
+    padding-top: 80px;
+    margin: 0px auto;
+}
+.services__title{
+    font-size: 65px;
+    font-weight: 600;
+}
+.services__description{
+    width: 844px;
+    text-align: center;
+    font-size: 21px;
+    font-weight: 400;
+    padding-bottom: 62px;
+}
+.services__groups{
+    display: flex;
+    justify-content: space-between;
+    gap: 42px;
+}
+.group__investigation{
+    width: 480px;
+    height: 346px;
+    background-color: var(--color-gray-light);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+    padding-top: 39px;
+    border-radius: 14px;
+}
+.investigation__svg{
+    color: var(--color-green);
+}
+.svg--dark{
+    color: var(--color-green-dark);
+}
+.investigation__title{
+    font-size: var(--space-2xl, 32px);
+    font-weight: 600;
+}
+.investigation__info{
+    width: 432px;
+    font-size: 19px;
+    font-weight: 400;
+}
+.group__editorial{
+    width: 480px;
+    height: 346px;
+    background-color: var(--color-gray-light);
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+    align-items: center;
+    padding-top: 47px;
+    border-radius: var(--corner-radius-lg);
+}
+.editorial__svg{
+    color: var(--color-green);
+}
+.editorial__title{
+    font-size: 32px;
+    font-weight: 600;
+}
+.editorial__info{
+    width: 432px;
+    font-size: 19px;
+    font-weight: 400;
+}
+
+/*                        Sección de Proyectos                     */
+.section--projects {
+    display: flex;
+    width: 100%;
+    padding-top: 80px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+.projects{
+    display: flex; 
+    /* justify-content: space-between;  */
+    align-items: center; 
+    width: 100%;
+    max-width: 1416px; 
+    padding-top: 80px;
+    margin: 0px auto;
+    flex-direction: column;
+    position: relative;
+    margin-top: -25px;
+}
+.projects__title{
+    font-size: 65px;
+    font-weight: 600;
+}
+.projects__description{
+    width: 921px;
+    height: 78px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+/* Cards de Proyectos */
+.projects__card{
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-4xl, 40px); 
+    align-items: center;
+    justify-content: center;
+}
+/* Cards de Editorial */
+.card__images{
+    min-width: 445px;
+    min-height: 489px;
+    background-color: var(--color-green-extra-light);
+    border-radius: var(--corner-radius-md);
+    position: relative;
+}
+.card__category{
+    font-size: 19px;
+    font-weight: 400;
+    color: var(--color-green);
+    margin-top: 37px;
+}
+.card__name{
+    font-size: 24px;
+    font-weight: 700;
+}
+.images__book{
+    width: 276px;
+    height: 432px;
+    position: absolute;
+    top: var(--space-xl, 28px);
+    left: 45px;
+    border-radius: var(--corner-radius-xs);
+    box-shadow: var(--box-shadow);
+}
+.images__back1{
+    height: 396px;
+    position: absolute;
+    top: var(--space-5xl);
+    left: 220px;
+}
+.card__editorial2{
+    height: 627px;
+}
+.images__magazine{
+    width: 302px;
+    height: 432px;
+    position: absolute;
+    top: 30px;
+    left: 35px;
+    border-radius: var(--corner-radius-xs);
+    box-shadow: var(--box-shadow);
+}
+.images__back2{
+    height: 396px;
+    position: absolute;
+    top: var(--space-5xl, 44px);
+    left: 220px;
+}
+/* Cards de Investigación */
+.images__poster{
+    width: 297px;
+    height: 416px;
+    position: absolute;
+    top: 35px;
+    left: var(--space-2xl, 32px);
+    border-radius: var(--corner-radius-xs);
+    box-shadow: var(--box-shadow);
+}
+.images__back3{
+    height: 396px;
+    position: absolute;
+    top: 45px;
+    left: 180px;
+}
+.button__behance{
+    margin-top: 20px;
+    padding: 17px 30px;
+    background-color: var(--color-green);
+    text-decoration: none;
+    color: var(--color-white);
+    border-radius: var(--corner-radius-sm);
+}
+.button__behance:hover{
+    background-color: var(--color-green-extra-dark);
+}
+/*                                    Sección de Contacto                                       */
+.section--contact {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+}
+.contact{
+    display: flex; 
+    align-items: center; 
+    flex-direction: column;
+    width: 100%;
+    max-width: 1416px; 
+    padding-top: 80px;
+    margin: 0px auto;
+}
+.contact__title{
+    font-size: 65px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.contact__description{
+    width: 932px;
+    text-align: center;
+    font-size: 21px;
+    font-weight: 400;
+    padding-bottom: var(--space-8xl, 86px);
+}
+.contact__form{
+    display: flex;
+    align-items: center;
+    width: 874px;
+    height: 75px;
+}
+.form{
+    display: flex; 
+    justify-content: center; 
+    width: 100%;
+    justify-content: space-between;
+}
+.form__input{
+    outline: none;
+    width: 627px;
+    height: 75px;
+    border-radius: var(--corner-radius-sm);
+    font-size: 16px;
+    border-radius: var(--corner-radius-lg);
+
+    border: 1px solid var(--color-gray-medium);
+    background-color: var(--color-gray-light);
+}
+::placeholder {
+    color: var(--color-gray-medium);
+    font-family: var(--font-primary);
+    font-size: 21px;
+    font-weight: 400;
+    padding: 22px 21px 26px;
+}
+
+.button {
+    padding: 20px 31px 19px 29px;
+    background-color: var(--color-green);
+    border: none;
+    border-radius: var(--corner-radius-lg);
+    color: var(--color-white);
+    font-family: var(--font-primary);
+
+    font-size: 24px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: var(--color-green-extra-dark);
+}
+
+/* Footer */
+.footer{
+    width: 1925px;
+    height: 552px;
+    background-color: var(--color-gray-light);
+    display: flex; 
+    align-items: center; 
+    flex-direction: column;
+}
+.footer__brand{
+    margin-top: 95px;
+}
+.footer__nav{
+    margin-top: 81px;
+}
+.footer__logos{
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    width: 142px;
+}
+.footer__credits{
+    width: 1920px;
+    height: 84px;
+    background-color: var(--color-green-extra-dark);
+    margin-top: 60px;
+    /* Texto */
+    justify-content: center;
+    display: flex; 
+    align-items: center; 
+    color: var(--color-white);
+    text-transform: capitalize;
+}
+.footer__creditas--highlighted{
+    font-weight: 700;
+    color: var(--color-green);
+}
+
+/* Mobile 375px */
+@media (max-width: 375px) {
+    .nav__link{
+        display: none;
+    }
+    .nav__link--icon-only{
+        display: block;
+    }
+    .nav__link--primary{
+        display: flex;
+    }
+    .header{
+        padding: 50px;
+        width: 60%;
+    }
+    /* Sections */
+    .main {
+        display: flex;
+        flex-direction: column;
+    }
+    .section {
+        display: flex;
+        flex-direction: column;
+    }
+    /* Sección - Home */
+    .section--home {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .home {
+        width: 100%;
+        padding-top: 100px;
+        margin: 0px auto;
+        flex-direction: column;
+    }
+    /* Textos y Titulos - Home*/
+    .home__text {
+        width: 350px;
+    }
+    .text__short{
+        height: 160px;
+    }
+    .text__subtitle {
+        font-size: 18px;
+    }
+    .text__name {
+        font-size: 21px;
+    }
+    .text__title {
+        line-height: 100%;
+        font-size: 45px;
+    }
+    .text__title--highlighted {
+        margin-left: 120px;
+    }
+    .text__paragraph {
+        font-size: 16px;
+        gap: 30px;
+    }
+    /* Logos e imagenes - Home */
+    .home__graphics {
+        gap: 26px;
+    }
+    .graphics__photo1 {
+        width: 520px;
+        height: 520px;
+        width: 100%;
+        height: auto;
+    }
+    .logos__instagram{
+        width: 22px;
+        height: 22px;
+    }
+    .logos__behance{
+        width: 22px;
+        height: 22px;
+    }
+    .logos__github{
+        width: 22px;
+        height: 22px;
+    }
+    /* Sección Sobre Mi */
+    .section--about {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center; 
+        width: 100%;
+        height: 800px;
+    }
+    .aboutme{
+        display: flex; 
+        flex-direction: column;
+        align-items: center; 
+        width: 100%;
+        max-width: 100%;
+        margin-top: 600px;
+    }
+    /* Foto */
+    .me__about{
+        width: 555px;
+        height: 555px;
+        width: 100%;
+        height: auto;
+    }
+    /* Información */
+    .text__about{
+        width: 450px;
+    }
+    .about__title{
+        font-size: 32px;
+        font-weight: 600;
+    }
+    .about__paragraph{
+        height: 240px;
+        font-weight: 400;
+        line-height: 30px;
+        font-size: 16px;
+        margin-bottom: 28px;
+    }
+    /* Barra de Progreso */
+    .about__skills{
+        height: 174px;
+    }
+    .skills__first{
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+    .progressbar{
+        width: 100%;
+        height: 12px;
+        background-color: var(--color-gray-reg);
+        border-radius: var(--corner-radius-xs, 6px);
+    }
+    .progressbar__container1{
+        width: 657px;
+        height: 12px;
+        background-color: var(--color-green);
+        border-radius: var(--corner-radius-xs, 6px);
+    }
+    .progressbar__circule{
+        width: 32px;
+        height: 32px;
+        background-color: var(--color-gray-reg);
+        border: 2px solid var(--color-green-dark);
+        border-radius: var(--space-pill);
+        margin-top: -23px;
+        margin-left: 650px;
+    }
+    .progressbar__circule2{
+        width: 32px;
+        height: 32px;
+        background-color: var(--color-gray-reg);
+        border: 2px solid var(--color-green-dark);
+        border-radius: var(--space-pill);
+        margin-top: -23px;
+        margin-left: 700px;
+    }
+    .skills__second{
+        font-size: 18px;
+        font-weight: 600;
+        margin-top: 26px;
+        margin-bottom: 18px;
+    }
+    .progressbar__container2{
+        width: 721px;
+        height: 12px;
+        background-color: var(--color-green);
+        border-radius: var(--corner-radius-xs, 6px);
+    }
+    /* Texto corto */
+    .about__languages{
+        width: 923px;
+        text-align: center;
+        justify-content: center;
+    }
+    .about__zone{
+        width: 923px;
+        padding-bottom: 60px;
+    }
+}
